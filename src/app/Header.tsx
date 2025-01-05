@@ -51,7 +51,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <hr className="h-4" />
+      <hr className="h-4" /> 
     <Mobilemenu  />
     </>
   );

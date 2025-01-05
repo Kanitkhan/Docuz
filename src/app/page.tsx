@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Header from "./Header";
-import Head from "next/head";
 import Profile from "./Profile";
 
 export default function Home() {

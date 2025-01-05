@@ -8,13 +8,10 @@ import Mobilemenu from "./Mobilemenu";
 const Header = () => {
 
 
-  let openMenu = ()  => {
+  const openMenu = ()  => {
     document.getElementById("mobileMenu")!.style.margin = "0"
  
    }
-  let closeMenu  = ()  => {
-    document.getElementById("mobileMenu")!.style.marginLeft = "-100vw"
-  }
 
 
   return (

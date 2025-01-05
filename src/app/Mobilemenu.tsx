@@ -9,11 +9,7 @@ import Image from 'next/image';
 const Mobilemenu = () => {
 
 
-    let openMenu = ()  => {
-        document.getElementById("mobileMenu")!.style.margin = "0"
-     
-       }
-      let closeMenu  = ()  => {
+      const closeMenu  = ()  => {
         document.getElementById("mobileMenu")!.style.marginLeft = "-100vw"
       }
    

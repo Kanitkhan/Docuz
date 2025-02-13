@@ -5,7 +5,16 @@ import React from "react";
 import bell from "../../public/bell.svg";
 import search from "../../public/search.svg";
 import Mobilemenu from "./Mobilemenu";
+import { signOut } from "next-auth/react";
+import { getAuth } from "firebase/auth";
+import { auth } from "./firebase/config";
 const Header = () => {
+
+
+  const signOutUser = () =>{
+    const auth = getAuth();
+    auth.signOut()
+  }
 
 
   const openMenu = ()  => {
@@ -13,21 +22,24 @@ const Header = () => {
  
    }
 
+   console.log(auth)
 
   return (
     <>
       <div className="headerBox md:grid md:grid-cols-7  xsm:flex xsm:justify-between xsm:items-center   xl:gap-28  py-8 ">
         <div onClick={()=>openMenu()} className="logo col-span-2 ">
           <h1  className="font-extrabold">Docuz</h1>
+          <button onClick={()=>{signOutUser(); console.log(auth)}}
+          >Signout</button>
         </div>
         <nav className="nav md:col-span-3  md:flex  md:items-center xsm:hidden xl:px-14 lg:px-8">
           <ul className=" flex justify-between items-center space-x-10 w-full px-2">
-            <li className="fontD font-semibold md:text-xs xl:text-base lg:text-sm">
+            <li className="fontD font-semibold md:text-xs xl:text-base lg:text-sm cursor-pointer">
               Dashboard
             </li>
-            <li className="md:text-xs xl:text-base lg:text-sm">Payments</li>
-            <li className="md:text-xs xl:text-base lg:text-sm">Utility</li>
-            <li className="md:text-xs xl:text-base lg:text-sm">Statistics</li>
+            <li className="md:text-xs xl:text-base lg:text-sm cursor-pointer">Payments</li>
+            <li className="md:text-xs xl:text-base lg:text-sm cursor-pointer">Utility</li>
+            <li className="md:text-xs xl:text-base lg:text-sm cursor-pointer">Statistics</li>
           </ul>
         </nav>
         <div className="navSearchBar flex lg:justify-around xl:justify-between md:justify-end xsm:justify-end col-span-2 items-center">
